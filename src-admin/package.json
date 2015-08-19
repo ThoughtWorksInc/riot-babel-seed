@@ -1,0 +1,15 @@
+{
+  "browser": {
+    "reflux": "./utils/reflux-riot/index.js",
+    "jquery": "jquery",
+    "riot": "riot",
+    "lodash": "lodash"
+  },
+  "browserify": {
+    "transform": [
+      "import-riotify",
+      "babelify",
+      "envify"
+    ]
+  }
+}

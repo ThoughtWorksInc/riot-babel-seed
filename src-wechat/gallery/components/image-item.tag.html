@@ -1,0 +1,16 @@
+<image-item class='image-item'>
+
+    <link rel="import" href="../../components/icon.tag.html"/>
+
+    <div onclick='{onItemClick}'
+         class='image-item__wrapper {clickable:opts.onclick} {selected:opts.selectable && opts.__selected}'>
+        <img src='{opts.src}' if='{!opts.lazy_load}'/>
+        <img data-original='{opts.src}' if='{opts.lazy_load}'/>
+        <span if="{opts.selectable}" class="image-item__select-state" onclick="{onCheckboxClick}">
+            <icon type="check"/>
+        </span>
+    </div>
+
+    <script src='./image-item.js'/>
+
+</image-item>

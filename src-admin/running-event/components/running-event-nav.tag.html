@@ -1,0 +1,19 @@
+<running-event-nav>
+
+    <ul class="nav nav-tabs">
+        <li class="{ active: runningEvent.value == category }" each="{runningEvent in runningEventList}">
+            <a href="#" onclick="{parent.transitionTo}">
+                {runningEvent.label}
+                <span class="badge"> {parent.counts[runningEvent.value] || 0}</span>
+            </a>
+        </li>
+        <li class="pull-right">
+            <a href="#/create">
+                Create Event
+            </a>
+        </li>
+    </ul>
+
+    <script src="./running-event-nav.js"></script>
+
+</running-event-nav>

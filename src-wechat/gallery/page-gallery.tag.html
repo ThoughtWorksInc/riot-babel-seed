@@ -1,0 +1,27 @@
+<page-gallery class='page-gallery'>
+
+    <link rel="import" href='./components/gallery-banner.tag.html'/>
+    <link rel="import" href='./components/gallery-cover.tag.html'/>
+    <link rel="import" href='./components/footer-float.tag.html'/>
+
+    <gallery-banner title="{userName}" no_desc="{userName}"/>
+
+    <div class="container">
+        <div class="gallery-cover-item" each="{ gallery in galleryList }">
+            <gallery-cover gallery="{gallery}">
+                <span class="gallery-edit-btn" if="{parent.parent.editable}">
+                    <a href="#" onclick="{parent.parent.editAlbum.bind(this, gallery)}">编辑相册</a>
+                </span>
+            </gallery-cover>
+        </div>
+    </div>
+
+    <footer-float>
+        <a href="{parent.Links.FOOTER_LINK}">
+            {parent.Links.FOOTER_LINK_TEXT}
+        </a>
+    </footer-float>
+
+    <script src="./page-gallery.js"/>
+
+</page-gallery>

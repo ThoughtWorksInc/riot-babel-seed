@@ -1,0 +1,54 @@
+<running-event-list class="running-event-list">
+
+    <link rel="import" href="./qrcode.tag.html"/>
+    <link rel="import" href="../../components/glyphicon.tag.html"/>
+
+    <div class='list-group'>
+        <div class='list-group-item { selected: parent.activeId == item.id }'
+             each='{item in opts.list}'>
+
+            <qrcode if='{item.status !== "CANCELED"}' qrcode="{ item.qrCode }" id="{ item.id }"/>
+
+            <h4 class='list-group-item-heading'>
+                {RunningEventTypes[item.type]}
+                <small>{item.tagline}</small>
+            </h4>
+
+            <p if='{!!item.netReferenceId}' class='list-group-item-text'>
+                <glyphicon type="asterisk"/>
+                {item.netReferenceId}
+                <a href="{item.netReferenceLink}" target="__self">
+                    <glyphicon type="new-window"/>
+                </a>
+            </p>
+
+            <p if='{!!item.location}' class='list-group-item-text'>
+                <glyphicon type='map-marker'/>
+                {item.location}
+            </p>
+
+            <p if='{!!item.when}' class='list-group-item-text'>
+                <glyphicon type='time'/>
+                {moment(item.when).format('YYYY-MM-DD HH:mm')}
+            </p>
+
+
+            <p if='{item.status === "CANCELED"}' class='alert alert-warning'>
+                reason of cancellation: {item.reasonOfCancellation}
+            </p>
+
+            <p if='{item.status !== "CANCELED"}' class="list-group-item-controller">
+                <a class="btn btn-default btn-sm" href="#" onclick='{parent.handleClick}'>
+                    <glyphicon type='pencil'/>
+                    edit
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+    </div>
+
+    <script src='./running-event-list.js'></script>
+
+</running-event-list>

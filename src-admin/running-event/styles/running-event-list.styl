@@ -1,0 +1,30 @@
+.running-event-list {
+
+  .list-group-item {
+    cf();
+
+    border-radius: 0 !important;
+
+    &.selected {
+      border-right: 10px solid $brand-primary;
+      background: none
+    }
+  }
+
+  .qrcode {
+    float: left;
+    width: 100px;
+    margin-right: 1em;
+  }
+
+  .alert {
+    margin: 0.5em 0 0;
+  }
+
+  .list-group-item-controller {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+  }
+}

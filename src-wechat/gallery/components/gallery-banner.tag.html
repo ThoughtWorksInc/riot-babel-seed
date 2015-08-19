@@ -1,0 +1,44 @@
+<gallery-banner class='gallery-banner'>
+
+    <link rel='import' href='../../components/icon.tag.html'/>
+
+    <div class='gallery-banner__share-tip'>
+        <div class='container'>
+            <div class='gallery-banner__row'>
+                <div class='gallery-banner__col'>
+                    点此分享
+                    <div class="arrow-to-share-btn">
+                        <icon type="arrow-up"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='gallery-banner__logo-group'>
+        <div class='container'>
+            <div class='gallery-banner__row'>
+                <div class='gallery-banner__col gallery-banner__col--logo'>
+                    <img class='logo' src='./assets/images/nrc-logo.svg' alt=''/>
+                </div>
+                <div class='gallery-banner__col'>
+                    <h1 class='title'>
+                        {opts.title}
+                    </h1>
+                    <p if='{!opts.no_desc}' class='text'> Nike+ Run Club <br/> 跑步课程 </p>
+                </div>
+                <div if="{isWechat}" class='gallery-banner__col gallery-banner__col--share-btn'>
+                    <button class="share-btn" onclick="{onShareBtnClick}">
+                        <icon type='share'/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img class='gallery-banner__bg' src='{backgroundImage}'/>
+
+    <script src="./gallery-banner"></script>
+
+</gallery-banner>

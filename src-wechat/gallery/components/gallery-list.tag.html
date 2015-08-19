@@ -1,0 +1,25 @@
+<gallery-list class='gallery-list'>
+
+    <link rel='import' href='./gallery-group.tag.html'/>
+    <link rel='import' href='./image-item.tag.html'/>
+
+    <div class='gallery'>
+        <div class='gallery__image-list'>
+            <div class="gallery__image-list-item" each='{photoObj,idx in photos}'>
+                <image-item
+                        src='{photoObj.thumbnail}'
+                        lazy_load="true"
+                        selected='{photoObj.selected}'
+                        selectable='{parent.opts.editable}'
+                        on_item_checkbox_click={parent.toggleSelectPhoto}
+                        onclick='{parent.moveToPreview}'/>
+            </div>
+        </div>
+    </div>
+
+    <script src='./gallery-list.js'></script>
+
+</gallery-list>
+
+
+

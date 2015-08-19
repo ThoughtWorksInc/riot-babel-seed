@@ -1,0 +1,23 @@
+<gallery-cover class='gallery-cover'>
+
+    <link rel='import' href='./gallery-group.tag.html'/>
+    <link rel='import' href='./image-item.tag.html'/>
+
+    <gallery-group gallery='{opts.gallery}'>
+        <div class='gallery'>
+            <div class='gallery__image-list {gallery__image-list--one-col: parent.covers.length === 1, gallery__image-list--two-col: parent.covers.length <= 4 && parent.covers.length > 1}'>
+                <div class="gallery__image-list-item" each='{src,idx in parent.covers}'>
+                    <image-item src='{src}' onclick='{parent.parent.photoItemClick}'/>
+                </div>
+            </div>
+        </div>
+        <yield></yield>
+    </gallery-group>
+
+
+    <script src="./gallery-cover.js"/>
+
+</gallery-cover>
+
+
+

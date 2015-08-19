@@ -1,0 +1,30 @@
+.page-gallery {
+
+  display: block;
+  padding-bottom: 40px;
+
+  .container {
+    padding: 15px;
+  }
+
+  & > .container {
+    min-height: 400px;
+  }
+
+  .gallery-edit-btn {
+    display: block;
+    background-color: $color-primary;
+    & > a {
+      display: block;
+      color: #000;
+      padding: 12px 0;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .gallery-cover-item + .gallery-cover-item {
+    margin-top: 15px;
+  }
+}

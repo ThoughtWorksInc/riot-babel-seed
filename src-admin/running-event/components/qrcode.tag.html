@@ -1,0 +1,31 @@
+<qrcode class="qrcode">
+
+    <div class="qrcode__inner">
+        <img if="{opts.qrcode}" onclick="{showModel}" src='{opts.qrcode.qrCodeUrl}'/>
+        <a class="qrcode__link" if="{!opts.qrcode}" href="#" onclick="{setQrcode}"> Set QR Code </a>
+    </div>
+
+    <div class="modal fade" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span>×</span>
+                    </button>
+                    <h4 class="modal-title">
+                        Right Click and save the Qrcode
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <img src='{opts.qrcode.qrCodeUrl}'/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./qrcode.js"></script>
+
+</qrcode>

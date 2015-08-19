@@ -1,0 +1,46 @@
+.running-event-detail {
+
+  .file-uploader {
+    margin-bottom: 1em;
+  }
+
+  .gallery__image-list {
+    margin-bottom: 1em;
+
+    cf()
+
+    .image-item {
+      col(1 / 3, cycle:3);
+      position: relative;
+      margin-bottom: 1em;
+
+      .image-item__inner {
+        position: relative;
+        padding-bottom: 100%;
+        overflow: hidden;
+        img {
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+    }
+
+    .image-item__close {
+      position: absolute;
+      width: 28px;
+      font-size: 14px;
+      height: @width;
+      top: (-@width / 2);
+      right: (-@width / 2);
+      line-height: @height;
+      text-align: center;
+      z-index: 10;
+
+      border-radius: 50%;
+      border: none;
+    }
+
+  }
+}

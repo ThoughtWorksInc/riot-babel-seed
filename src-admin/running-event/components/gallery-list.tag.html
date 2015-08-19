@@ -1,0 +1,22 @@
+<gallery-list class='gallery-list'>
+
+
+    <div class='gallery'>
+        <div class='gallery__image-list'>
+            <div class="image-item" each='{imageItem,idx in images}'>
+                <button class="image-item__close" onclick="{parent.removeImage}">
+                    <i class="glyphicon glyphicon-remove"/>
+                </button>
+                <div class="image-item__inner">
+                    <img src='{imageItem.thumbnail}'/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='./gallery-list.js'></script>
+
+</gallery-list>
+
+
+

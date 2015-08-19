@@ -1,0 +1,13 @@
+<message-list class="message-list">
+
+    <link rel="import" href="../components/alert.tag.html"/>
+
+    <div class="message-list__item" each="{messageItem,idx in messageList}">
+        <alert type="{messageItem.type}" on_close="{parent.handleMessageClose}" auto_close="{messageItem.autoClose}">
+            {messageItem.message}
+        </alert>
+    </div>
+
+    <script src="./message-list.js"></script>
+
+</message-list>

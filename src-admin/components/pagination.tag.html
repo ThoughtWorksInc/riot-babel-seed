@@ -1,0 +1,44 @@
+<pagination>
+
+    <ul class="pagination">
+        <li class="{disabled:current==0}">
+            <a href="#" onclick="{onItemPrevClick}">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+
+        <li if="{numberList[0] > 0}">
+            <a href="#" onclick="{onItemFirstClick}"> 1 </a>
+        </li>
+
+        <li if="{numberList[0] > 0}">
+            <a href="#" onclick="{emptyClick}">
+                ...
+            </a>
+        </li>
+
+        <li each="{number in numberList}"
+            class="{active:number == parent.current}">
+            <a href="#" onclick="{parent.onItemClick}">{number + 1}</a>
+        </li>
+
+        <li if="{numberList[numberList.length - 1] < total - 1 }">
+            <a href="#" onclick="{emptyClick}">
+                ...
+            </a>
+        </li>
+
+        <li if="{numberList[numberList.length - 1] < total - 1 }">
+            <a href="#" onclick="{onItemLastClick}"> {total} </a>
+        </li>
+
+        <li class="{disabled:current==total-1}">
+            <a href="#" onclick="{onItemNextClick}">
+                <span>»</span>
+            </a>
+        </li>
+
+    </ul>
+
+    <script src="./pagination.js"></script>
+</pagination>

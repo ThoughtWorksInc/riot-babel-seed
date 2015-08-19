@@ -1,0 +1,57 @@
+.image-item {
+  position: relative;
+  display: block;
+  background-color: $color-primary;
+  width: 100%;
+
+}
+
+.image-item__wrapper {
+
+  padding-bottom: 100%
+  margin-bottom: 3px;
+  overflow: hidden;
+
+  & > img {
+    position: absolute;
+    display: block;
+    width: 100%;
+  }
+
+  &.clickable:hover {
+    cursor: pointer;
+  }
+}
+
+.image-item__select-state {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  padding: 8px 8px 16px 16px;
+
+  .icon {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 16px;
+    font-size: 14px;
+    height: @width;
+    transition: 0.2s;
+    line-height: @width;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.image-item__wrapper.selected {
+  .image-item__select-state {
+    .icon {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: #000;
+    }
+  }
+}

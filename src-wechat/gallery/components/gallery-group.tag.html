@@ -1,0 +1,32 @@
+<gallery-group class='gallery-group'>
+    <div class='gallery-group__hgroup'>
+        <img class="gallery-group__hgroup-bg" src="./assets/images/cover-banners/{opts.gallery.type || 'NTC_RUN'}.jpg"/>
+
+        <div class="gallery-group__hgroup-main">
+            <div class="gallery-group__date-group" onclick="{handleSeeMoreClick}">
+                <div class="date-group">
+                    <div class="date-group__inner">
+                        <span class="date">{date}</span>
+                        <span class="day">{day}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-group__text-group">
+                <div class="text-group">
+                    <div class="text-group__inner">
+                        <h3 class='gallery-group__title'>{opts.gallery.typeText}</h3>
+
+                        <p class='gallery-group__sub-title'>{opts.gallery.tagline}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='gallery-group__content'>
+        <yield></yield>
+    </div>
+
+    <script src="./gallery-group"></script>
+
+</gallery-group>

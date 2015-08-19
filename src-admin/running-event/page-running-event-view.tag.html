@@ -1,0 +1,13 @@
+<page-running-event-view>
+
+    <link rel="import" href="./components/running-event-detail.tag.html"/>
+
+    <div if="{loading}">
+        loading ...
+    </div>
+
+    <running-event-detail if="{!loading}" detail="{eventItem}"/>
+
+    <script src="./page-running-event-view.js"></script>
+
+</page-running-event-view>

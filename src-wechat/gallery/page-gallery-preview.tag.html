@@ -1,0 +1,44 @@
+<page-gallery-preview class="page-gallery-preview">
+
+    <link rel="import" href="./components/gallery-slide.tag.html"/>
+    <link rel="import" href="../components/icon.tag.html"/>
+
+    <div class="page-gallery-preview__banner">
+        <span class="title">
+            {gallery.tagline}
+        </span>
+    </div>
+
+    <gallery-slide
+            images='{photos}'
+            active_idx="{activeIdx}"
+            on_slide_end="{onSlideEnd}"
+            on_edge="{onSlideEdge}"/>
+
+    <div class="page-gallery-preview__tool" if="{!(isWechat || editable)}">
+        <span class="btn-download" onclick="{download}">
+            <icon type="download"></icon>
+            下载图片
+        </span>
+    </div>
+
+    <div class="page-gallery-preview__tool" if="{editable}">
+        <button class='btn-save' onclick="{saveAlbum}"
+                disabled="{gallery.albumPhotos.length > albumPhotoLengthMax}">
+                    <span if={gallery.albumPhotos} class="number-count">
+                        {gallery.albumPhotos.length}
+                    </span>
+            {albumPhotos.length > albumPhotoLengthMax?'只允许选择 9 张':'完成'}
+        </button>
+        <span class="btn-selected pull-right {selected:photoList[activeIdx].selected}"
+              onclick="{toggleSelectPhoto}">
+            <icon type="check"></icon>
+            <span class="text">
+                {photoList[activeIdx].selected?'取消':'选择'}
+            </span>
+        </span>
+    </div>
+
+    <script src='./page-gallery-preview.js'></script>
+
+</page-gallery-preview>

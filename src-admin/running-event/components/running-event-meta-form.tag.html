@@ -1,0 +1,46 @@
+<running-event-meta-form class="running-event-meta-form">
+
+    <form onsubmit="{handleSubmit}">
+
+        <yield></yield>
+
+        <div class="form-group">
+            <label> Type </label>
+            <select name="type" class="form-control" value="{form.type}">
+                <option value="{optionItem.value}" each="{optionItem in runningEventOptions}"> {optionItem.label}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label> Tagline </label>
+            <input type="text" name="tagline" class="form-control" value="{form.tagline}">
+        </div>
+
+        <div class="form-group">
+            <label> Reference Id </label>
+            <input type="text" name="netReferenceId" class="form-control" value="{form.netReferenceId}">
+        </div>
+
+        <div class="form-group">
+            <label> Location </label>
+            <input type="text" name="location" class="form-control" value="{form.location}">
+        </div>
+
+        <div class="form-group">
+            <label> When </label>
+
+            <div class="input-group date-picker">
+                <input readonly type="text" name="when" class="form-control" value="{form.when}">
+                <span class="input-group-addon">
+                    <span class="glyphicon-calendar glyphicon"></span>
+                </span>
+            </div>
+
+        </div>
+
+    </form>
+
+    <script src="./running-event-meta-form.js"></script>
+
+</running-event-meta-form>

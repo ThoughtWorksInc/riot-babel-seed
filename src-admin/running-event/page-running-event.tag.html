@@ -1,0 +1,28 @@
+<page-running-event>
+
+    <link rel="import" href="./components/running-event-list.tag.html"/>
+    <link rel="import" href="../components/pagination.tag.html"/>
+
+    <div class="row" if="{ category !== 'CANCELED' }">
+        <div class="col-md-4">
+
+            <running-event-list list="{list}" on_item_click="{handleItemClick}"/>
+            <pagination current="{page}" total="{totalPages}" on_item_click="{handlePaginationItemClick}"/>
+
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <route></route>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" if="{ category === 'CANCELED' }">
+        <div class="col-md-12">
+            <running-event-list list="{list}"/>
+        </div>
+    </div>
+
+    <script src="./page-running-event.js"></script>
+
+</page-running-event>

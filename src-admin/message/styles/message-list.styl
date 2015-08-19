@@ -1,0 +1,19 @@
+.message-list {
+  position: fixed
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  padding: 10px;
+  z-index: 300;
+  opacity: 0.7;
+}
+
+.message-list__item {
+  & > .alert {
+    margin: 0;
+  }
+  margin-top: 0.5em;
+  &:first-child {
+    margin-top: 0;
+  }
+}

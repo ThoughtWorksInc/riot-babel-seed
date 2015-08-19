@@ -1,0 +1,34 @@
+<file-uploader class="file-uploader">
+
+    <link rel="import" href="../../components/alert.tag.html"/>
+
+    <alert if="{uploadError}" type="danger" on_close="{onErrorItemClose}">
+        {parent.uploadError}
+    </alert>
+
+    <label class="btn btn-primary btn-block" disabled="{ uploadingFiles.length || opts.__disabled }">
+        <input type="file" onchange="{handleFileSelect}"
+               accept="image/*"
+               class="hidden" multiple
+               disabled="{ uploadingFiles.length || opts.__disabled }"/>
+        <span>Select file && Upload</span>
+    </label>
+
+    <div if="{uploadFailedFiles.length}">
+        <div each="{file in uploadFailedFiles}" class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%">
+                {file.name}
+            </div>
+        </div>
+    </div>
+
+    <div each="{file in uploadingFiles}" class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+             style="width:{file.processing}%">
+            {file.name}
+        </div>
+    </div>
+
+    <script src="./file-uploader.js"></script>
+
+</file-uploader>

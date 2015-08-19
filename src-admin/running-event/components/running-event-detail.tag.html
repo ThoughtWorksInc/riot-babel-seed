@@ -1,0 +1,82 @@
+<running-event-detail class="running-event-detail">
+
+    <link rel="import" href="../../components/alert.tag.html"/>
+    <link rel="import" href="./file-uploader.tag.html"/>
+    <link rel="import" href="./gallery-list.tag.html"/>
+    <link rel="import" href="./running-event-meta-form.tag.html"/>
+
+    <div>
+
+        <running-event-meta-form detail="{opts.detail}" on_form_submit="{handleSubmit}">
+
+            <div if="{parent.error}">
+                <alert type="danger" on_close="{parent.onErrorItemClose}">
+                    {parent.parent.error}
+                </alert>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning btn-lg"> Save Event</button>
+                <button if='{parent.opts.detail.status === "ACTIVE"}'
+                        type="button"
+                        onclick='{parent.cancelEvent}'
+                        class="btn btn-danger btn-lg">
+                    Cancel Event
+                </button>
+                <button if='{parent.opts.detail.status !== "CANCELED"}'
+                        type="button"
+                        onclick='{parent.sendRecap}'
+                        class="btn btn-primary btn-lg">
+                    Send Recap
+                </button>
+            </div>
+        </running-event-meta-form>
+
+        <hr/>
+
+        <div class="form-group">
+            <h4>
+                COVER PAGE PHOTOS
+                <button onclick="{deleteAllGalleryByType('cover')}" class="btn btn-link pull-right">
+                    Delete all
+                </button>
+            </h4>
+
+            <div if="{ opts.detail.gallery.covers.length >6 }" class="alert alert-danger" role="alert">
+                Cover only allow 6 photos, please remove some of them;
+            </div>
+
+            <gallery-list type="cover" gallery="{opts.detail.gallery}"/>
+
+            <file-uploader url='/api/nrc/gallery/{opts.detail.galleryId}/cover'
+                           disabled="{ opts.detail.gallery.covers.length >=6 }"
+                           on_upload_completed="{updateGallery}"/>
+
+        </div>
+
+        <hr/>
+
+        <div class="form-group">
+            <h4>
+                GALLERY PHOTOS
+                <button onclick="{deleteAllGalleryByType('photo')}" class="btn btn-link pull-right">
+                    Delete all
+                </button>
+                <a class="btn btn-link" target='__self' href="/events-gallery/#/gallery/{opts.detail.galleryId}">
+                    Preview gallery
+                </a>
+            </h4>
+
+            <gallery-list type="photo" gallery="{opts.detail.gallery}"/>
+
+            <file-uploader url='/api/nrc/gallery/{opts.detail.galleryId}/photo'
+                           on_upload_completed="{updateGallery}"/>
+
+
+        </div>
+
+    </div>
+
+    <script src="./running-event-detail.js"></script>
+
+</running-event-detail>

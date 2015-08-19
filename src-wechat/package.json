@@ -1,0 +1,19 @@
+{
+  "browser": {
+    "reflux": "../src-admin/utils/reflux-riot/index.js",
+    "riot": "riot",
+    "scriptjs": "scriptjs",
+    "jquery": "jquery",
+    "js-cookie": "js-cookie",
+    "slick-carousel": "slick-carousel",
+    "classnames": "classnames"
+  },
+  "browserify": {
+    "transform": [
+      "import-riotify",
+      "babelify",
+      "envify",
+      "envify-config"
+    ]
+  }
+}

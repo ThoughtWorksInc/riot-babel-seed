@@ -1,0 +1,137 @@
+.gallery-banner {
+  display: block;
+  position: relative;
+  padding-bottom: (219 / 750 * 100%)
+  overflow: hidden;
+  border-bottom: 5px solid $color-primary;
+  .container {
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .gallery-banner__share-tip {
+    top: -100%;
+  }
+  .gallery-banner__logo-group {
+    top: 0;
+  }
+
+  &.gallery-banner--share-tip {
+    .gallery-banner__share-tip {
+      top: 0;
+    }
+    .gallery-banner__logo-group {
+      top: 100%;
+    }
+  }
+}
+
+.gallery-banner__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+  margin: 0;
+}
+
+.gallery-banner__share-tip,
+.gallery-banner__logo-group {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  transition: top 0.5s;
+}
+
+.gallery-banner__share-tip {
+  color: $color-primary;
+  text-align: right;
+  font-size: 24px;
+
+  .arrow-to-share-btn {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 58px;
+    text-align: center;
+  }
+}
+
+.gallery-banner__row {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-banner__col {
+  display: table-cell;
+  vertical-align: middle;
+
+  .logo {
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .title,
+  .text {
+    margin: 0 0 0 16px;
+    line-height: 1;
+    color: $color-primary;
+  }
+
+  .title {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .text {
+    line-height: 1.1;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .share-btn {
+    display: block;
+    color: #fff;
+    width: 36px;
+    font-size: 36px;
+    background: transparent;
+    border: none;
+    outline: 0;
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.gallery-banner__col--logo {
+    width: 17%;
+  }
+
+  &.gallery-banner__col--share-btn {
+    width: 1px;
+    padding: 0;
+  }
+
+  @media (min-width: 375px) {
+    .title {
+      font-size: 28px;
+    }
+
+    .text {
+      font-size: 16px;
+    }
+
+    &.gallery-banner__col--logo {
+      width: 19%;
+    }
+  }
+
+}
+
+
+
